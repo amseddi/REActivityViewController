@@ -29,7 +29,7 @@
 
 @implementation REMailActivity
 
-- (id)init
+- (id)initWitCompletion:(void (^)(void))completion
 {
     self = [super initWithTitle:NSLocalizedStringFromTable(@"activity.Mail.title", @"REActivityViewController", @"Mail")
                           image:[UIImage imageNamed:@"REActivityViewController.bundle/Icon_Mail"]
@@ -100,7 +100,7 @@
 				if (subject)
 					[mailComposeViewController setSubject:subject];
 				
-				[activityViewController.presentingController presentViewController:mailComposeViewController animated:YES completion:nil];
+				[activityViewController.presentingController presentViewController:mailComposeViewController animated:YES completion:completion];
 			}
         }];
     };

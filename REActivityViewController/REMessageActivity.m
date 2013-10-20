@@ -29,7 +29,7 @@
 
 @implementation REMessageActivity
 
-- (id)init
+- (id)initWitCompletion:(void (^)(void))completion
 {
     self = [super initWithTitle:NSLocalizedStringFromTable(@"activity.Message.title", @"REActivityViewController", @"Message")
                           image:[UIImage imageNamed:@"REActivityViewController.bundle/Icon_Message"]
@@ -60,7 +60,7 @@
             if (text && url)
                 messageComposeViewController.body = [NSString stringWithFormat:@"%@ %@", text, url.absoluteString];
             
-            [activityViewController.presentingController presentViewController:messageComposeViewController animated:YES completion:nil];
+            [activityViewController.presentingController presentViewController:messageComposeViewController animated:YES completion:completion];
         }];
     };
     

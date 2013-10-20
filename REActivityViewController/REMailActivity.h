@@ -27,4 +27,6 @@
 
 @interface REMailActivity : REActivity
 
+- (id)initWitCompletion:(void (^)(void))completion;
+
 @end

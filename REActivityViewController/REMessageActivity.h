@@ -28,5 +28,6 @@
 
 @interface REMessageActivity : REActivity
 
+- (id)initWitCompletion:(void (^)(void))completion;
 
 @end
