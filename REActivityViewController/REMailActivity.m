@@ -43,7 +43,7 @@
     self.actionBlock = ^(REActivity *activity, REActivityViewController *activityViewController) {
         NSDictionary *userInfo = weakSelf.userInfo ? weakSelf.userInfo : activityViewController.userInfo;
         NSString *subject = [userInfo objectForKey:@"subject"];
-        NSString *text = [userInfo objectForKey:@"text"];
+        NSString *text = [userInfo objectForKey:@"mailText"];
         id attachment = [userInfo objectForKey:@"attachment"];
         NSURL *url = [userInfo objectForKey:@"url"];
         

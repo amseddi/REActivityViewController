@@ -41,7 +41,7 @@
     __typeof(&*self) __weak weakSelf = self;
     self.actionBlock = ^(REActivity *activity, REActivityViewController *activityViewController) {
         NSDictionary *userInfo = weakSelf.userInfo ? weakSelf.userInfo : activityViewController.userInfo;
-        NSString *text = [userInfo objectForKey:@"text"];
+        NSString *text = [userInfo objectForKey:@"messageText"];
         NSURL *url = [userInfo objectForKey:@"url"];
         [activityViewController dismissViewControllerAnimated:YES completion:^{
             if (![MFMessageComposeViewController canSendText])
